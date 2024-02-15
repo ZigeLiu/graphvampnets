@@ -20,6 +20,9 @@ pip install -r ./requirements2.txt
 ```bash
 python ./setup.py install
 ```
+Tutorial
+---------
+A colab tutorial can be found [here](https://colab.research.google.com/drive/1dfFfPWFSonaDQBvf6moVDoxxFmBOT_xq?usp=sharing).
 
 Reference
 ---------
