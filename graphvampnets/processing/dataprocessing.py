@@ -295,10 +295,13 @@ class Postprocessing_vac(Preprocessing):
         d0_rm = d0 - mean
         d1_rm = d1 - mean
 
-        c00 = 1. / batch_size * np.dot(d0_rm.T, d0_rm)
-        c11 = 1. / batch_size * np.dot(d1_rm.T, d1_rm)
-        c01 = 1. / batch_size * np.dot(d0_rm.T, d1_rm)
-        c10 = 1. / batch_size * np.dot(d1_rm.T, d0_rm)
+        d0_rm_T = np.transpose(d0_rm,(0,2,1))
+        d1_rm_T = np.transpose(d1_rm,(0,2,1))
+
+        c00 = 1. / batch_size * np.dot(d0_rm_T, d0_rm)
+        c11 = 1. / batch_size * np.dot(d1_rm_T, d1_rm)
+        c01 = 1. / batch_size * np.dot(d0_rm_T, d1_rm)
+        c10 = 1. / batch_size * np.dot(d1_rm_T, d0_rm)
 
         c0 = 0.5 * (c00 + c11)
         c1 = 0.5 * (c01 + c10)
